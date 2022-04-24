@@ -1,0 +1,54 @@
+import 'package:flutter/material.dart';
+import 'package:navigation_1/screens/loginpage';
+import 'package:navigation_1/screens/profilepage.dart';
+import 'package:navigation_1/screens/calendarpage.dart';
+//import 'package:navigation_1/main.drt';
+
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  static const route = '/';
+  static const routename = 'HomePage';
+
+  @override
+  Widget build(BuildContext context) {
+    print('${HomePage.routename} built');
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(HomePage.routename),
+      ),
+     body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+           //TO LOGIN
+           ElevatedButton(
+            child: Text('To the LoginPage'),
+             onPressed: () {
+             //tolgo la pagina home dallo stack
+             Navigator.pushNamed(context, '/login/');
+             },
+            ),
+           //TO PROFILE
+           ElevatedButton(
+            child: Text('To the ProfilePage'),
+             onPressed: () {
+             //tolgo la pagina home dallo stack
+             Navigator.pushNamed(context, '/profile/');
+             },
+            ),
+           //TO CALENDAR
+           ElevatedButton(
+            child: Text('To the CalendarPage'),
+             onPressed: () {
+             //tolgo la pagina home dallo stack
+             Navigator.pushNamed(context, '/calendar/');
+             },
+            ),
+          ],
+        ),
+      ),
+    );
+  } //build
+
+} //ProfilePage
